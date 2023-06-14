@@ -106,13 +106,25 @@ header .navBar{
     height: 50px;
     background-color: #008CBA;
     color: white;
+    transition-duration: 0.4s;
 }
+.content1 .btn1:hover{
+    background-color: white;
+    color:  #008CBA;
+}
+
 .content1 .btn2{
     width: 150px;
     height: 50px;
     background-color: #4CAF50;
     color: white;
     margin-left: 20px;
+    transition-duration: 0.4s;
+}
+
+.content1 .btn2:hover{
+    background-color: white;
+    color: #4CAF50;
 }
 
 
@@ -182,4 +194,10 @@ header .navBar{
     background-color: #4CAF50;
     color: white;
     flex-grow: 1;
+    transition-duration: 0.4s;
+}
+
+.buy-ticket-btn input:hover{
+    color: #4CAF50;
+    background-color: white;
 }
