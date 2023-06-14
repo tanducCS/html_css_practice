@@ -8,8 +8,50 @@ function changeBackground() {
         index = 0;
     }
     main.style.backgroundImage = images[index];
-    
     index++
 }
+
+var day = parseInt(document.getElementById('day').innerText);
+var hour = parseInt(document.getElementById('hour').innerText);
+var minutes = parseInt(document.getElementById('minutes').innerText);
+var seconds = parseInt(document.getElementById('seconds').innerText);
+var timeout = null;
+
+start();
+
+function start(){
+
+    if(seconds === -1){
+        seconds = 59;
+        minutes -= 1;
+    }
+
+    if (minutes === -1){
+        minutes = 59;
+        hour -= 1;
+    }
+
+    if (hour === -1){
+        hour = 23;
+        day -= 1;
+    }
+
+    if (day === -1){
+        clearTimeout(timeout);
+        alert("het gio");
+        return false;
+    }
+
+    document.getElementById('day').innerText = day.toString();
+    document.getElementById('hour').innerText = hour.toString();
+    document.getElementById('minutes').innerText = minutes.toString();
+    document.getElementById('seconds').innerText = seconds.toString();    
+
+    timeout = setTimeout(() => {
+        seconds--;
+        start();
+    }, 1000);
+}
+
 
 setInterval(changeBackground, 2000)
